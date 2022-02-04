@@ -3,7 +3,7 @@
 ## 1.使用脚本安装
 请使用root权限进行安装
 ```
-sudo bash <(curl -s -L https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/script/linux/manage.sh)
+sudo bash <(curl -s -L https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/main/script/linux/manage.sh)
 ```
 ## 2.编辑配置文件
 进入安装位置
