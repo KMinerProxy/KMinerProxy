@@ -1,8 +1,8 @@
 #抄来抄去的，我来帮你们抽象化一下，方便下一个人抄哈
 #@Author KMinerProxy
 
-BINARY_URL="https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/master/releases/latest/kminerproxy_linux_amd64"
-LOOP_RUN_URL="https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/master/script/looprun.sh"
+BINARY_URL="https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/main/releases/latest/kminerproxy_linux_amd64"
+LOOP_RUN_URL="https://raw.githubusercontent.com/KMinerProxy/KMinerProxy/main/script/linux/looprun.sh"
 
 INSTALL_PATH="/root/kminer" #如果你想变更安装位置的话，请编辑该值
 BINARY_PATH="$INSTALL_PATH/KMinerProxy"
@@ -21,6 +21,9 @@ if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl
 else
     echo "此脚本不支持该系统" && exit 1
 fi
+
+
+echo "======================================================="
 
 install() {
     if [ -d $INSTALL_PATH ]; then
