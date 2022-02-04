@@ -2,11 +2,12 @@
    <h1>KMinerProxy</h1>
 </div>
 
-轻量、支持抽水、多端管理的ETH代理服务端
+轻量、支持抽水、多端管理的ETH代理服务端，**非改版/逆向其他版本，纯自行编写**
 
 ### 项目目标
  - 专注于解决必要问题（本项目主要用于自用）
  - 以方便单机批量管理、稳定性为目标
+ - 开放控制协议
 
 ### 性能指标
  - 自测50连接数、20G算力，内存占用70M、平均CPU占用1%(1CPU)
@@ -18,7 +19,6 @@
 
 #### Linux
  - [KMinerProxy-Linux脚本部署指南](docs/guide/linux-script.md)
- - [KMinerProxy-Linux手动部署指南](docs/guide/linux-manual.md)
 
 
 ### [配置文件手册](docs/config/README.md)
