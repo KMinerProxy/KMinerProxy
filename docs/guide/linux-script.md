@@ -13,7 +13,7 @@ cd /root/kminer
 ```
 编辑配置文件
 ```
-vim resolvers.json
+vim resolver.json
 ```
 或使用其他工具编辑
 

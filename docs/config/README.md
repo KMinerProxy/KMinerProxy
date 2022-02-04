@@ -4,9 +4,9 @@
 进行编辑与校验
 
 当前版本的配置文件：
- - ```resolvers.json``` 抽水配置
+ - ```resolver.json``` 抽水配置
  - ```api.json``` 接口配置
-### resolvers.json
+### resolver.json
  含义（注意，实际配置中不可以含注释，请查看下方例子）:
 ```
 [{
