@@ -83,7 +83,7 @@ start() {
     fi
     screen -dmS $SCREEN_NAME
     sleep 0.2s
-    screen -r $SCREEN_NAME -p 0 -X stuff "cd /root/miner_proxy"
+    screen -r $SCREEN_NAME -p 0 -X stuff "cd $INSTALL_PATH"
     screen -r $SCREEN_NAME -p 0 -X stuff $'\n'
     screen -r $SCREEN_NAME -p 0 -X stuff "./run.sh"
     screen -r $SCREEN_NAME -p 0 -X stuff $'\n'
@@ -129,6 +129,48 @@ change_limit(){
     fi
 }
 
+# test
+set_autostart(){
+  echo "开始设置自启"
+  if [[ $(command -v systemctl) ]]; then
+
+    rm -r -f $INSTALL_PATH/autostart.sh
+    echo "
+if screen -list | grep -q "$SCREEN_NAME"; then
+      echo -e "KMinerProxy已启动,请勿重复启动" && exit 1
+fi
+screen -dmS $SCREEN_NAME
+sleep 0.2s
+screen -r $SCREEN_NAME -p 0 -X stuff "cd $INSTALL_PATH"
+screen -r $SCREEN_NAME -p 0 -X stuff $'\n'
+screen -r $SCREEN_NAME -p 0 -X stuff './run.sh'
+screen -r $SCREEN_NAME -p 0 -X stuff $'\n'
+echo 'KMinerProxy已启动'
+echo '您可以使用指令screen -r $SCREEN_NAME 来管理程序'
+" >> $INSTALL_PATH/autostart.sh
+
+    rm -r -f /lib/systemd/system/kminerproxy.service
+    echo "[Unit]
+Description=KMinerProxy Service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=bash $INSTALL_PATH/autostart.sh
+
+[Install]
+WantedBy=multi-user.target" >> /lib/systemd/system/kminerproxy.service
+
+
+    systemctl enable kminerproxy
+  else
+      echo "此脚本不支持该系统" && exit 1
+  fi
+
+}
+
+
 check_limit(){
     echo -n "当前连接数限制："
     ulimit -n
@@ -151,7 +193,7 @@ echo "  7、解除linux系统连接数限制(需要重启服务器生效)"
 echo "  8、查看当前系统连接数限制"
 echo "  9、查看控制台(键入ctrl+a+d返回)"
 echo "======================================================="
-read -p "$(echo -e "请选择[1-8]：")" choose
+read -p "$(echo -e "请选择[1-9]：")" choose
 case $choose in
 1)
     install
@@ -180,6 +222,10 @@ case $choose in
 9)
     go_screen
     ;;
+
+#10)
+#    set_autostart
+#    ;;
 *)
     echo "输入错误请重新输入！"
     ;;
