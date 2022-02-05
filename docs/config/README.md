@@ -1,4 +1,4 @@
-## 配置文件手册(CONFIG_VERSION:100)
+## 配置文件手册(CORE_VERSION:101)
 请至少运行一次程序以生成默认的配置文件，
 推荐使用[bejson格式化校验工具](https://www.bejson.com)
 进行编辑与校验
@@ -24,6 +24,8 @@
   "tls_proxy": true, //是否为SSL代理
   "tls_certification":"",//证书文件位置，该处填空则自动生成
   "tls_secret":"",//证书文件位置，该处填空则自动生成
+  "fake_hash_rate":true,//是否开启虚拟上报份额
+  "fake_hash_rate_percent":95,//虚拟上报份额百分比
   "start_time": "0001-01-01T00:00:00Z" //忽略
 }]
 ```
@@ -44,7 +46,7 @@
   "start_time": "0001-01-01T00:00:00Z"
 }]
 ```
-配置一个多端口实例（SSL/TCP混合）
+配置一个多端口实例（SSL/TCP混合），其中9999端口虚拟上报份额数
 ```json
 [{
   "name": "E-ssl-1",
@@ -68,6 +70,8 @@
       "password": "x",
       "rate": 1
     },
+    "fake_hash_rate":true,
+    "fake_hash_rate_percent":95,
     "tls_proxy": true
   },
   {
@@ -94,3 +98,7 @@
 }
 ```
 
+### 更新记录
+```
+101:更新虚拟份额上报选项
+```
