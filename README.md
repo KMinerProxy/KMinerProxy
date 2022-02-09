@@ -2,7 +2,7 @@
    <h1>KMinerProxy</h1>
    <p>轻量、高性能、支持抽水的ETH代理服务端</p>
    <p>TG_GROUP:<a href="https://t.me/+EN0Y5PlxK6JiYTk1">https://t.me/+EN0Y5PlxK6JiYTk1</a></p>
-   <p>LATEST_VERSION:102</p>
+   <p>LATEST_VERSION:103</p>
 </div>
 
 ### 项目目标

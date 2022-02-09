@@ -1,4 +1,4 @@
-## 配置文件手册(CORE_VERSION:101)
+## 配置文件手册(CORE_VERSION:103)
 请至少运行一次程序以生成默认的配置文件，
 推荐使用[bejson格式化校验工具](https://www.bejson.com)
 进行编辑与校验

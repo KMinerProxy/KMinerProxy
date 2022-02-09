@@ -1,5 +1,5 @@
 {
-  "core_version":102,
+  "core_version":103,
   "update_time":"2022-02-09",
-  "update_info":"更新热重载、DEV费率公开"
+  "update_info":"更新热重载、DEV费率公开，致命BUG修复"
 }
