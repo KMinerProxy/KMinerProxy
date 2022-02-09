@@ -26,8 +26,8 @@ fi
 echo "======================================================="
 
 install() {
-    if [ -d $INSTALL_PATH ]; then
-        echo -e "您已安装了该软件,如果确定没有安装,请输入rm -rf $INSTALL_PATH" && exit 1
+    if [ -d $BINARY_PATH ]; then
+        echo -e "您已安装了该软件,如果确定没有安装,请输入rm -rf $BINARY_PATH" && exit 1
     fi
     if screen -list | grep -q "$SCREEN_NAME"; then
         echo -e "检测到您已启动了KMinerProxy,请关闭后再安装" && exit 1
