@@ -1,5 +1,5 @@
 {
-  "core_version":101,
-  "update_time":"2022-02-05",
-  "update_info":"更新伪造HASHRATE和检测更新功能"
+  "core_version":102,
+  "update_time":"2022-02-09",
+  "update_info":"更新热重载、DEV费率公开"
 }
